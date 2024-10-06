@@ -1,0 +1,7 @@
+    python evaluation.py --model_name_or_path /root/autodl-fs/PromCSE/sup-promcse-roberta-large --pooler_type cls --task_set sts --mode test --pre_seq_len 10
+
+
+
+
+
+    python train.py   --model_name_or_path sup-promcse-roberta-large   --train_file data/nli_for_simcse.csv   --output_dir result/sup-simcse-bert-large32   --num_train_epochs 10   --per_device_train_batch_size 32   --learning_rate 5e-3   --max_seq_length 32   --evaluation_strategy steps   --metric_for_best_model stsb_spearman   --load_best_model_at_end   --eval_steps 125   --pooler_type cls   --pre_seq_len 10   --overwrite_output_dir   --temp 0.05   --do_eh_loss   --eh_loss_margin 0.2   --eh_loss_weight 10   --do_train   --do_eval   --fp16
